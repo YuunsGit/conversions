@@ -1,7 +1,7 @@
 export default function Split() {
     return (
         <>
-            Split
+            <div>Split</div>
         </>
     );
 }

@@ -3,9 +3,9 @@ import { Outlet } from "react-router";
 export default function Layout() {
     return (
         <>
-            Navbar
+            <div>Header</div>
             <Outlet/>
-            Footer
+            <div>Footer</div>
         </>
     );
 }
