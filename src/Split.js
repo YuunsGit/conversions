@@ -1,6 +1,7 @@
-export default function Home() {
+export default function Split() {
     return (
         <>
+            Split
         </>
     );
 }
