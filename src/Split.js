@@ -1,7 +1,7 @@
 export default function Split() {
-    return (
-        <>
-            <div>Split</div>
-        </>
-    );
+  return (
+    <>
+      <div>Split</div>
+    </>
+  );
 }

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#logorotate {
+    transform-box: fill-box;
+    transform-origin: 52.5% 50%;
+}
+
+svg:hover > #logorotate {
+    animation: spin 0.8s ease-in-out;
+}
+
+svg {
+    overflow: visible;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
