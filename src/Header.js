@@ -1,5 +1,5 @@
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { ReactComponent as Logo } from "./Logo.svg";
+import { Disclosure } from "@headlessui/react";
+import { ReactComponent as Logo } from "./img/Logo.svg";
 import { Link } from "react-router-dom";
 
 import {
@@ -66,7 +66,9 @@ export default function Header() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <Logo className="block h-8 w-auto fill-white ml-3" />
+                            <Link to="/">
+                                <Logo className="block h-8 w-auto fill-white ml-3" />
+                            </Link>
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex space-x-4">
                                     {navigation.map((item) => (
