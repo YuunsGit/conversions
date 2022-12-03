@@ -1,7 +1,128 @@
 export default function Split() {
     return (
         <>
-            <div>Split</div>
+            <div>
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+                absolute
+                <br />
+            </div>
         </>
     );
 }

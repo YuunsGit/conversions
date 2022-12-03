@@ -46,13 +46,13 @@ function classNames(...classes) {
 
 export default function Header() {
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-stone-800">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white">
+                                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-stone-400 hover:bg-stone-700 hover:text-white">
                                     {open ? (
                                         <XMarkIcon
                                             className="block h-6 w-6"
@@ -74,9 +74,9 @@ export default function Header() {
                                     {navigation.map((item) => (
                                         <Link
                                             to={item.to}
-                                            className="flex  text-white hover:bg-gray-700 
+                                            className="flex  text-white hover:bg-stone-700 
                                                         px-3 py-2 rounded-md text-sm font-medium
-                                                        active:bg-gray-600 active:text-gray-300"
+                                                        active:bg-stone-600 active:text-stone-300"
                                         >
                                             <item.icon className="w-5 h-5 mr-2" />
                                             {item.name}
@@ -95,8 +95,8 @@ export default function Header() {
                                     to={item.to}
                                     className={classNames(
                                         item.current
-                                            ? "bg-gray-900 text-white"
-                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                            ? "bg-stone-900 text-white"
+                                            : "text-stone-300 hover:bg-stone-700 hover:text-white",
                                         "flex px-3 py-2 rounded-md text-base font-medium text-right transition-transform justify-end"
                                     )}
                                 >

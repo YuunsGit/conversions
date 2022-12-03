@@ -8,5 +8,5 @@ module.exports = {
             octocat: "url('/img/octocat.svg')",
         },
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };
