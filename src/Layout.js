@@ -5,9 +5,9 @@ import Footer from "./Footer";
 export default function Layout() {
     return (
         <>
-            <Header />
+            <Header key="header" />
             <Outlet />
-            <Footer />
+            <Footer key="footer" />
         </>
     );
 }

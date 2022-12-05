@@ -6,6 +6,12 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #logorotate {
     transform-box: fill-box;
     transform-origin: 52.5% 50%;
