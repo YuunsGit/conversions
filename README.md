@@ -1,12 +1,32 @@
-# Conversions (Work in Progress)
-> PDF editing website that can split, rotate, stamp and convert PDF files within seconds.
+<p align="center">
+  <img src="https://i.imgur.com/iaooqjX.png" height=60 alt="Conversions Icon" />
+</p>
+<h1 align="center">Conversions (Work in Progress)</h1>
+<h3 align="center">
+  PDF editing website that can split, rotate, stamp and convert PDF files within seconds.
+  <br/>
+  It was built with React.js and open for contributions.
+</h3>
 
-## Tech Stack
-![Stack](https://user-images.githubusercontent.com/42357900/205958529-ff011520-ee63-430f-baad-0ae7f4003d9e.png)
+<br/>
 
-## Visit the website
+<h2 align="center">
+Tech Stack
+</h2>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/42357900/205958529-ff011520-ee63-430f-baad-0ae7f4003d9e.png" height=280 alt="Conversions Icon" />
+</p>
 
-[![all-devices-black](https://user-images.githubusercontent.com/42357900/205955739-53267013-e265-4ef8-ae0a-afe7203ab31b.png)](https://conversions.yuuns.tech/)
+<br/>
+
+<h2 align="center">
+Visit the Website
+</h2>
+
+<p align="center">
 <a href="https://conversions.yuuns.tech/">
-Visit the website by clicking here (WIP)
+  <img src="https://user-images.githubusercontent.com/42357900/205955739-53267013-e265-4ef8-ae0a-afe7203ab31b.png" height=280 alt="Conversions Icon" />
+  <br/>
+  Visit the website by clicking here (WIP)
 </a>
+  </p>
