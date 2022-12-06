@@ -40,7 +40,9 @@ export default function Page({ page, pageNum, selects, setSelects }) {
     return (
         <div
             className={"relative p-2 pb-0 duration-100 ".concat(
-                selects.has(pageNum) ? "bg-lime-400" : "bg-stone-200"
+                selects.has(pageNum)
+                    ? "bg-lime-400"
+                    : "bg-stone-200 hover:bg-stone-300 "
             )}
             onClick={select}
         >

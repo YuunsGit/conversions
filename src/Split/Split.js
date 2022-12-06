@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Input from "./Input";
 import SelectPages from "./SelectPages";
-import { PDFDocument } from "pdf-lib";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import { PDFDocument } from "pdf-lib";
 
 export default function Split() {
     const [step, setStep] = useState(1);
@@ -75,7 +75,7 @@ export default function Split() {
                         File downloaded successfully.
                         <div
                             onClick={() => window.location.reload(false)}
-                            className="block mx-auto my-2 bg-stone-400 rounded-md px-5 py-2 max-w-max md:ma-10 h-auto text-white font-semibold text-l select-none hover:bg-stone-500 cursor-pointer"
+                            className="block mx-auto my-6 bg-stone-300 rounded-md px-5 py-2 max-w-max md:ma-10 h-auto text-white font-semibold select-none hover:bg-stone-400 cursor-pointer"
                         >
                             SPLIT AGAIN
                         </div>
