@@ -25,7 +25,7 @@ Visit the Website
 
 <p align="center">
 <a href="https://conversions.yuuns.tech/">
-  <img src="https://user-images.githubusercontent.com/42357900/205955739-53267013-e265-4ef8-ae0a-afe7203ab31b.png" height=280 alt="Conversions Icon" />
+  <img src="https://user-images.githubusercontent.com/42357900/205955739-53267013-e265-4ef8-ae0a-afe7203ab31b.png" width=900 height=380 alt="Conversions Icon" />
   <br/>
   Visit the website by clicking here (WIP)
 </a>
