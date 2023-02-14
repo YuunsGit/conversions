@@ -9,11 +9,13 @@ import Split from "./Split/Split";
 import Rotate from "./Rotate";
 import Convert from "./Convert";
 import Stamp from "./Stamp";
+import ScrollToTop from "./ScrollToTop";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <HashRouter>
+        <ScrollToTop />
         <Routes>
             <Route element={<Layout />}>
                 <Route path="/" element={<Home />} />

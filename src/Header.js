@@ -90,19 +90,20 @@ export default function Header() {
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pt-2 pb-3">
                             {navigation.map((item) => (
-                                <Disclosure.Button
-                                    as="Link"
-                                    to={item.to}
-                                    className={classNames(
-                                        item.current
-                                            ? "bg-stone-900 text-white"
-                                            : "text-stone-300 hover:bg-stone-700 hover:text-white",
-                                        "flex px-3 py-2 rounded-md text-base font-medium text-right transition-transform justify-end"
-                                    )}
-                                >
-                                    {item.name}
-                                    <item.icon className="w-5 h-5 ml-2" />
-                                </Disclosure.Button>
+                                <Link to={item.to}>
+                                    <Disclosure.Button
+                                        as="div"
+                                        className={classNames(
+                                            item.current
+                                                ? "bg-stone-900 text-white"
+                                                : "text-stone-300 hover:bg-stone-700 hover:text-white",
+                                            "flex px-3 py-2 rounded-md text-base font-medium text-right transition-transform justify-end"
+                                        )}
+                                    >
+                                        {item.name}
+                                        <item.icon className="w-5 h-5 ml-2" />
+                                    </Disclosure.Button>
+                                </Link>
                             ))}
                         </div>
                     </Disclosure.Panel>

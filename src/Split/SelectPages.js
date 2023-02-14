@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Page from "./Page";
-import { DocumentCheckIcon } from "@heroicons/react/24/solid";
 import { ReactComponent as Gear } from "../img/Gear.svg";
 import { pdfjs } from "react-pdf/dist/esm/entry.webpack";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -15,20 +14,12 @@ export default function SelectPages(props) {
     }, []);
 
     const loadPages = async () => {
-        const pdfDoc = await pdfjs.getDocument({ data: props.fileBuffer })
-            .promise;
+        const pdfDoc = await pdfjs.getDocument({ data: props.fileBuffer }).promise;
         const newPages = [];
 
         for (let i = 1; i <= pdfDoc.numPages; i++) {
             const pdfPage = await pdfDoc.getPage(i);
-            const page = (
-                <Page
-                    page={pdfPage}
-                    pageNum={i}
-                    selects={selects}
-                    setSelects={setSelects}
-                />
-            );
+            const page = <Page page={pdfPage} pageNum={i} selects={selects} setSelects={setSelects} />;
             newPages.push(page);
         }
         setPages(newPages);
@@ -41,13 +32,8 @@ export default function SelectPages(props) {
 
     return (
         <>
-            <h2 className="prose prose-stone text-center mx-auto mb-6 text-xl">
-                Select pages to extract:
-            </h2>
-            <div
-                id="page-container"
-                className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mx-auto"
-            >
+            <h2 className="prose prose-stone text-center mx-auto mb-6 text-xl">Select pages to extract:</h2>
+            <div id="page-container" className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mx-auto">
                 {pages}
             </div>
             {/*<div

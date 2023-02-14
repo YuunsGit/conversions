@@ -4,9 +4,6 @@ module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
         extend: {},
-        octocat: {
-            octocat: "url('/img/octocat.svg')",
-        },
     },
     plugins: [require("@tailwindcss/typography")],
 };
