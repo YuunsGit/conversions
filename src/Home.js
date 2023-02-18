@@ -10,11 +10,8 @@ import {
 
 export default function Home() {
   return (
-    <main className="flex flex-col mx-auto max-w-7xl w-screen my-20 space-y-20">
-      <div
-        className="flex flex-col mx-auto justify-center space-between text-center text-5xl font-extrabold text-stone-900
-                md:text-6xl md:flex-row md:text-left md:space-x-5"
-      >
+    <main className="flex flex-col mx-auto max-w-7xl w-screen my-20 space-y-20 min-h-screen">
+      <div className="flex flex-col mx-auto justify-center space-between text-center text-5xl font-extrabold text-stone-900 md:text-6xl md:flex-row md:text-left md:space-x-5">
         <span className="block md:hidden">Edit PDFs,</span>
         <Exclude className="w-44 h-32 md:w-72 md:h-72 mx-auto" />
         <span className="hidden md:block my-auto">
