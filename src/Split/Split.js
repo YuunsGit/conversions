@@ -10,8 +10,8 @@ export default function Split() {
   const [filename, setFilename] = useState();
 
   const selectPages = async (uploaded) => {
+    const errContainer = document.getElementById("error");
     if (!uploaded || !uploaded.name.endsWith(".pdf")) {
-      const errContainer = document.getElementById("error");
       errContainer.innerHTML = "Uploaded file is not a PDF document.";
       errContainer.setAttribute(
         "class",
@@ -19,6 +19,10 @@ export default function Split() {
       );
       return;
     }
+    errContainer.setAttribute(
+      "class",
+      errContainer.getAttribute("class").replace("block", "hidden")
+    );
     const fileBuffer = await uploaded.arrayBuffer();
     setFilename(uploaded.name);
     setBuffer(fileBuffer);
