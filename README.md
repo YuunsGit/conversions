@@ -13,9 +13,11 @@
 <h2 align="center">
 Tech Stack
 </h2>
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/42357900/205958529-ff011520-ee63-430f-baad-0ae7f4003d9e.png" height=280 alt="Conversions Icon" />
-</p>
+<div align="center">
+  <img alt="React" src="https://user-images.githubusercontent.com/42357900/218828330-592fc93d-d58f-4c78-95dd-4c48967a1619.png" height="75" />
+  <img alt="Tailwind" src="https://user-images.githubusercontent.com/42357900/218828205-2228cc0e-8cdc-4f6a-9dd8-a5793dd8ffe9.svg" width="75" />
+  <img alt="React PDF" src="https://user-images.githubusercontent.com/42357900/224481827-eb54b2f9-83d1-46f4-87d9-6ab1b61a0aa2.png" height="75" />
+</div>
 
 <br/>
 
