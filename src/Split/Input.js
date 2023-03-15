@@ -32,7 +32,7 @@ export default function Input(props) {
       >
         <input {...getInputProps()} />
         <p className="text-center">
-          <span className="text-l">Drop file here</span>
+          <span className="text-l font-semibold">Drop file here</span>
           <br />
           <ArrowDownTrayIcon className="h-8 w-8 mx-auto my-2" />
         </p>

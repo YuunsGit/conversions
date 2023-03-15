@@ -49,17 +49,23 @@ export default function SelectPages(props) {
         {pages}
       </div>
       {processing ? (
-        <div className="block mx-auto my-8 px-10 max-w-max md:ma-10 h-auto">
+        <div className="block mx-auto mt-8 px-10 max-w-max md:ma-10 h-auto">
           <Gear className="h-14 w-14" />
         </div>
       ) : (
         <div
-          className="block mx-auto my-8 bg-lime-500 rounded-md px-10 py-5 max-w-max md:ma-10 h-auto text-white font-semibold text-l select-none hover:bg-lime-600 cursor-pointer"
+          className="block mx-auto mt-8 bg-lime-500 rounded-md px-10 py-5 max-w-max md:ma-10 h-auto text-white font-semibold text-l select-none hover:bg-lime-600 cursor-pointer"
           onClick={splitAndSave}
         >
           SPLIT & SAVE
         </div>
       )}
+      <div
+        onClick={() => window.location.reload(false)}
+        className="block mx-auto my-6 rounded-md max-w-max md:ma-10 h-auto text-stone-500 hover:text-stone-700 font-semibold select-none cursor-pointer"
+      >
+        GO BACK
+      </div>
     </>
   );
 }

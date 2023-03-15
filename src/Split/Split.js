@@ -77,12 +77,12 @@ export default function Split() {
           <div className="text-xl text-center">
             <CheckBadgeIcon className="inline fill-lime-400 w-10 h-8 mx-auto" />
             File downloaded successfully.
-            <div
-              onClick={() => window.location.reload(false)}
+            <a
+              href="/"
               className="block mx-auto my-6 bg-stone-300 rounded-md px-6 py-4 max-w-max md:ma-10 h-auto text-white font-semibold select-none hover:bg-stone-400 cursor-pointer"
             >
-              SPLIT AGAIN
-            </div>
+              GO BACK
+            </a>
           </div>
         );
       default:
