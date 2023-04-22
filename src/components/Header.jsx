@@ -1,5 +1,6 @@
+import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { ReactComponent as Logo } from "./img/Logo.svg";
+import { ReactComponent as Logo } from "../img/Logo.svg";
 import { Link } from "react-router-dom";
 
 import {
@@ -25,17 +26,17 @@ const navigation = [
   },
   {
     name: "Rotate",
-    to: "/rotate",
+    to: "/",
     icon: ArrowPathRoundedSquareIcon,
   },
   {
     name: "Stamp",
-    to: "/stamp",
+    to: "/",
     icon: BookmarkIcon,
   },
   {
     name: "Convert",
-    to: "/convert",
+    to: "/",
     icon: ArrowsRightLeftIcon,
   },
 ];
@@ -61,16 +62,17 @@ export default function Header() {
                 </Disclosure.Button>
               </div>
               <Link to="/">
-                <Logo className="block h-8 w-auto fill-white ml-3" />
+                <Logo className="ml-3 block h-8 w-auto fill-white" />
               </Link>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
                     <Link
                       to={item.to}
-                      className="flex text-white hover:bg-stone-700 px-3 py-2 rounded-md text-sm font-medium active:bg-stone-600 active:text-stone-300"
+                      key={item.to}
+                      className="flex rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-stone-700 active:bg-stone-600 active:text-stone-300"
                     >
-                      <item.icon className="w-5 h-5 mr-2" />
+                      <item.icon className="mr-2 h-5 w-5" />
                       {item.name}
                     </Link>
                   ))}
@@ -82,18 +84,18 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
-                <Link to={item.to}>
+                <Link to={item.to} key={item.to}>
                   <Disclosure.Button
                     as="div"
                     className={classNames(
                       item.current
                         ? "bg-stone-900 text-white"
                         : "text-stone-300 hover:bg-stone-700 hover:text-white",
-                      "flex px-3 py-2 rounded-md text-base font-medium text-right transition-transform justify-end"
+                      "flex justify-end rounded-md px-3 py-2 text-right text-base font-medium transition-transform"
                     )}
                   >
                     {item.name}
-                    <item.icon className="w-5 h-5 ml-2" />
+                    <item.icon className="ml-2 h-5 w-5" />
                   </Disclosure.Button>
                 </Link>
               ))}
