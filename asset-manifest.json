@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c51621e0.css",
-    "main.js": "/static/js/main.1da9c8a7.js",
+    "main.css": "/static/css/main.7cef49b8.css",
+    "main.js": "/static/js/main.6245dc37.js",
     "pdf.worker.js": "/edaed96737f19fb444812598e341dd59.js",
     "static/media/Logo.svg": "/static/media/Logo.f9a8928ef18c59acdf9da0570407caee.svg",
     "static/media/Gear.svg": "/static/media/Gear.5c420192edf3caaf7ea9b0c7ec790217.svg",
-    "static/media/github-filled.svg": "/static/media/github-filled.e61f1adb0f459a920ce22f870992fcf1.svg",
+    "static/media/GitHub.svg": "/static/media/GitHub.e61f1adb0f459a920ce22f870992fcf1.svg",
     "index.html": "/index.html",
     "static/media/Exclude.svg": "/static/media/Exclude.c6995a5381a3f70592131f749a4c4282.svg",
-    "static/media/linkedin-filled.svg": "/static/media/linkedin-filled.ef5b6d3779fc7251799068226bacf459.svg",
-    "main.c51621e0.css.map": "/static/css/main.c51621e0.css.map",
-    "main.1da9c8a7.js.map": "/static/js/main.1da9c8a7.js.map"
+    "static/media/LinkedIn.svg": "/static/media/LinkedIn.ef5b6d3779fc7251799068226bacf459.svg",
+    "main.7cef49b8.css.map": "/static/css/main.7cef49b8.css.map",
+    "main.6245dc37.js.map": "/static/js/main.6245dc37.js.map"
   },
   "entrypoints": [
-    "static/css/main.c51621e0.css",
-    "static/js/main.1da9c8a7.js"
+    "static/css/main.7cef49b8.css",
+    "static/js/main.6245dc37.js"
   ]
 }
