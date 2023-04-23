@@ -25,7 +25,7 @@ export default function Split() {
   const split = async () => {
     const pdfDoc = await PDFDocument.load(file.buffer);
 
-    const toExclude = [...Array(pageCount).keys()].filter((el) => {
+    const toExclude = [...Array(pageCount.current).keys()].filter((el) => {
       return !Array.from(selects)
         .map((i) => i - 1)
         .includes(el);
