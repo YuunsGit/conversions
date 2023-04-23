@@ -1,10 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
-export default function Page({ page, pageNum, selects }) {
-  const [selected, setSelected] = useState(false);
-
+export default function Page({ page, pageNum, selects, setSelects, selected }) {
   useEffect(() => {
     const canvas = document.getElementById("page-" + pageNum);
     const viewport = page.getViewport({
@@ -22,16 +20,15 @@ export default function Page({ page, pageNum, selects }) {
   }, [page, pageNum]);
 
   const select = () => {
-    const newSet = selects.current;
+    const newSet = selects;
 
-    setSelected(!selected);
-    if (selected) {
+    if (selects.has(pageNum)) {
       newSet.delete(pageNum);
     } else {
       newSet.add(pageNum);
     }
 
-    selects.current = newSet;
+    setSelects(new Set(newSet));
   };
 
   return (

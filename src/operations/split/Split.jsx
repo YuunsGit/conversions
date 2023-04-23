@@ -5,28 +5,16 @@ import Done from "./Done";
 
 import { PDFDocument } from "pdf-lib";
 import { pdfjs } from "react-pdf/dist/esm/entry.webpack";
-import Page from "./Page";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export default function Split() {
   const [file, setFile] = useState();
   const [downloaded, setDownloaded] = useState(false);
-  const pages = useRef([]);
-  const selects = useRef(new Set());
+  const [selects, setSelects] = useState(new Set());
+  const pageCount = useRef(0);
 
   const upload = async (uploaded) => {
     const fileBuffer = await uploaded.arrayBuffer();
-    const pdfDoc = await pdfjs.getDocument({ data: fileBuffer }).promise;
-
-    const pdfPages = [];
-    for (let i = 1; i <= pdfDoc.numPages; i++) {
-      const pdfPage = await pdfDoc.getPage(i);
-      const page = (
-        <Page page={pdfPage} pageNum={i} key={i} selects={selects} />
-      );
-      pdfPages.push(page);
-    }
-    pages.current = pdfPages;
 
     setFile({
       name: uploaded.name,
@@ -37,8 +25,8 @@ export default function Split() {
   const split = async () => {
     const pdfDoc = await PDFDocument.load(file.buffer);
 
-    const toExclude = [...Array(pages.current.length).keys()].filter((el) => {
-      return !Array.from(selects.current)
+    const toExclude = [...Array(pageCount).keys()].filter((el) => {
+      return !Array.from(selects)
         .map((i) => i - 1)
         .includes(el);
     });
@@ -67,7 +55,7 @@ export default function Split() {
   };
 
   return (
-    <main className="mx-auto my-24 flex w-screen max-w-7xl flex-col">
+    <main className="mx-auto my-24 flex min-h-screen w-screen max-w-7xl flex-col">
       <div className="prose prose-stone mx-12 md:mx-auto">
         <h1 className="text-center text-6xl">Split</h1>
         <p className="text-center text-xl md:mx-12">
@@ -79,10 +67,12 @@ export default function Split() {
         <Done />
       ) : file ? (
         <PageSelector
-          pages={pages}
+          fileBuffer={file.buffer}
           split={(selects, pageNum) => split(selects, pageNum)}
           selects={selects}
           cancel={() => setFile(null)}
+          pageCount={pageCount}
+          setSelects={(pages) => setSelects(pages)}
         />
       ) : (
         <Input upload={upload} />

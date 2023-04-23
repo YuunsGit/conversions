@@ -69,7 +69,7 @@ export default function Header() {
                   {navigation.map((item) => (
                     <Link
                       to={item.to}
-                      key={item.to}
+                      key={item.name}
                       className="flex rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-stone-700 active:bg-stone-600 active:text-stone-300"
                     >
                       <item.icon className="mr-2 h-5 w-5" />
