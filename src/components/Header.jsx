@@ -26,7 +26,7 @@ const navigation = [
   },
   {
     name: "Rotate",
-    to: "/",
+    to: "/rotate",
     icon: ArrowPathRoundedSquareIcon,
   },
   {
