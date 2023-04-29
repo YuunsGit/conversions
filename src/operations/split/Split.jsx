@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
-import Input from "./Input";
+import Input from "../../components/Input";
 import PageSelector from "./PageSelector";
-import Done from "./Done";
-
+import Done from "../../components/Done";
 import { PDFDocument } from "pdf-lib";
 import { pdfjs } from "react-pdf/dist/esm/entry.webpack";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
@@ -12,15 +11,6 @@ export default function Split() {
   const [downloaded, setDownloaded] = useState(false);
   const [selects, setSelects] = useState(new Set());
   const pageCount = useRef(0);
-
-  const upload = async (uploaded) => {
-    const fileBuffer = await uploaded.arrayBuffer();
-
-    setFile({
-      name: uploaded.name,
-      buffer: fileBuffer,
-    });
-  };
 
   const split = async () => {
     const pdfDoc = await PDFDocument.load(file.buffer);
@@ -36,7 +26,6 @@ export default function Split() {
     }
 
     const newBytes = await pdfDoc.save();
-
     const blob = new Blob([newBytes]);
     const href = URL.createObjectURL(blob);
 
@@ -55,7 +44,7 @@ export default function Split() {
   };
 
   return (
-    <main className="mx-auto my-24 flex min-h-screen w-screen max-w-7xl flex-col">
+    <main className="mx-auto my-24 flex w-screen max-w-7xl flex-col">
       <div className="prose prose-stone mx-12 md:mx-auto">
         <h1 className="text-center text-6xl">Split</h1>
         <p className="text-center text-xl md:mx-12">
@@ -75,7 +64,7 @@ export default function Split() {
           setSelects={(pages) => setSelects(pages)}
         />
       ) : (
-        <Input upload={upload} />
+        <Input setFile={(file) => setFile(file)} />
       )}
     </main>
   );

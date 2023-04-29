@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { useDropzone } from "react-dropzone";
 
-export default function Input({ upload }) {
+export default function Input({ setFile }) {
   const [error, setError] = useState();
   const { getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -11,18 +11,21 @@ export default function Input({ upload }) {
     maxFiles: 1,
     multiple: false,
     onDrop: (files) => {
-      upload(files[0]);
+      handleUpload(files[0]);
     },
   });
 
-  const handleUpload = async (e) => {
-    const toUpload = e.target.files[0];
-
+  const handleUpload = async (toUpload) => {
     if (!toUpload || !toUpload.name.endsWith(".pdf")) {
       setError("Uploaded file is not a PDF document.");
       return;
     }
-    await upload(toUpload);
+
+    const fileBuffer = await toUpload.arrayBuffer();
+    setFile({
+      name: toUpload.name,
+      buffer: fileBuffer,
+    });
 
     setError(null);
   }
@@ -38,7 +41,7 @@ export default function Input({ upload }) {
           type="file"
           accept="application/pdf"
           className="absolute hidden h-full w-full"
-          onChange={handleUpload}
+          onChange={(e) => handleUpload(e.target.files[0])}
         />
       </label>
       <span className="my-3 hidden text-center md:block">or</span>
