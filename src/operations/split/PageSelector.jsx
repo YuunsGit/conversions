@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ReactComponent as Gear } from "../../img/Gear.svg";
 import { pdfjs } from "react-pdf/dist/esm/entry.webpack";
 import Page from "./Page";
@@ -16,15 +16,19 @@ export default function PageSelector({
   const [error, setError] = useState();
   const [pages, setPages] = useState([]);
 
+  const progressRef = useRef();
+
   useEffect(() => {
     async function loadPages() {
       const pdfDoc = await pdfjs.getDocument({ data: fileBuffer }).promise;
       pageCount.current = pdfDoc.numPages;
+      progressRef.current.setAttribute("max", pdfDoc.numPages);
 
       const pdfPages = [];
       for (let i = 1; i <= pageCount.current; i++) {
         const pdfPage = await pdfDoc.getPage(i);
         pdfPages.push(pdfPage);
+        progressRef.current.setAttribute("value", i);
       }
       setPages(pdfPages);
       setProcessing(false);
@@ -58,7 +62,7 @@ export default function PageSelector({
   return (
     <div className="mx-auto">
       {processing ? (
-        <Gear className="h-14 w-14" />
+        <progress ref={progressRef} />
       ) : (
         <>
           <div className="mb-4 flex flex-col justify-between md:flex-row">
