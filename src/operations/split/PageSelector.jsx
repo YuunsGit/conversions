@@ -16,19 +16,15 @@ export default function PageSelector({
   const [error, setError] = useState();
   const [pages, setPages] = useState([]);
 
-  const progressRef = useRef();
-
   useEffect(() => {
     async function loadPages() {
       const pdfDoc = await pdfjs.getDocument({ data: fileBuffer }).promise;
       pageCount.current = pdfDoc.numPages;
-      progressRef.current.setAttribute("max", pdfDoc.numPages);
 
       const pdfPages = [];
       for (let i = 1; i <= pageCount.current; i++) {
         const pdfPage = await pdfDoc.getPage(i);
         pdfPages.push(pdfPage);
-        progressRef.current.setAttribute("value", i);
       }
       setPages(pdfPages);
       setProcessing(false);
@@ -62,7 +58,7 @@ export default function PageSelector({
   return (
     <div className="mx-auto">
       {processing ? (
-        <progress ref={progressRef} />
+        <Gear className="h-14 w-14" />
       ) : (
         <>
           <div className="mb-4 flex flex-col justify-between md:flex-row">
@@ -83,26 +79,18 @@ export default function PageSelector({
             {pages.map((page) => (
               <Page
                 page={page}
-                pageNum={page.pageNumber}
                 key={page.pageNumber}
                 selects={selects}
                 setSelects={(pages) => setSelects(pages)}
-                selected={selects.has(page.pageNumber)}
               />
             ))}
           </div>
-          {processing ? (
-            <div className="md:ma-10 mx-auto mt-8 block h-auto max-w-max px-10">
-              <Gear className="h-14 w-14" />
-            </div>
-          ) : (
-            <div
-              className="md:ma-10 text-l mx-auto mt-8 block h-auto max-w-max cursor-pointer select-none rounded-md bg-lime-500 px-10 py-5 font-semibold text-white hover:bg-lime-600"
-              onClick={splitAndSave}
-            >
-              SPLIT & SAVE
-            </div>
-          )}
+          <div
+            className="md:ma-10 text-l mx-auto mt-8 block h-auto max-w-max cursor-pointer select-none rounded-md bg-lime-500 px-10 py-5 font-semibold text-white hover:bg-lime-600"
+            onClick={splitAndSave}
+          >
+            SPLIT & SAVE
+          </div>
           <div
             onClick={cancel}
             className="md:ma-10 mx-auto my-6 block h-auto max-w-max cursor-pointer select-none rounded-md font-semibold text-stone-500 hover:text-stone-700"
