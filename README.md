@@ -26,7 +26,7 @@ Visit the Website
 </h2>
 
 <p align="center">
-<a href="https://conversions.yuuns.tech/">
+<a href="https://conversions.yunusemre.dev/">
   <img src="https://user-images.githubusercontent.com/42357900/205955739-53267013-e265-4ef8-ae0a-afe7203ab31b.png" alt="Conversions Icon" />
   <br/>
   Visit the website by clicking here (WIP)
