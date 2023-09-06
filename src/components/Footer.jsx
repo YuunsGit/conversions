@@ -13,7 +13,7 @@ export default function Footer() {
           by
           <br />
           <a
-            href="https://www.yuuns.tech/"
+            href="https://www.yunusemre.dev"
             target="_blank"
             rel="noreferrer"
             className="font-semibold duration-100 hover:text-stone-700"
